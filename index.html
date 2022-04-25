@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>contact form using js </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false">
+            <h3><a href=" #">GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email id " required>
+            <input type="text" id="phone" placeholder="Phone No. " required>
+            <textarea id="message" rows="4" placeholder="How can we help you "></textarea>
+            <button type="Submit">send</button>
+
+                       <!-- ======= Footer ======= -->
+            <footer>
+            <p><a href="https://www.instagram.com/vijay_choudhary_85/"> -->> VIJAY KUMAR << </a></p>
+            </footer>
+                    <!-- ======= Footer ======= -->
+
+        <form/>
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "server mail address ",
+                Password : "server email password ",
+                To : "To mail" ,
+                From : Document.getElementById("email").value ,
+                Subject : "NEW ENQUIRY ",
+                Body : "Name:"+Document.getElementById("name").value
+                    +"<br> Email:"+Document.getElementById("email").value
+                    +"<br> Phone no.:"+Document.getElementById("phonr").value
+                    +"<br> Message :"+Document.getElementById("message").value
+            }).then(
+            message => alert(message)
+            );
+        }
+    </script>  
+
+</body>
+</html>
